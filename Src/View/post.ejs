@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogger News</title>
+</head>
+<body>
+  <section class="container">
+    <div class="header">
+      <h1 class="title">Publique sua postagem</h1>
+    </div>
+    <div class="post">
+      <form action="/post" class="blogPost" method="post">
+        <label for="author">Autor:</label>
+        <input type="text" name="author" id="authorId"> <br> <br>
+
+        <label for="title">Titulo:</label>
+        <input type="text" name="title" id="titleId"> <br> <br>
+
+        <label for="content">Conteúdo:</label>
+        <input type="text" name="content" id="contentId"> <br> <br>
+
+        <label for="category">Categoria:</label>
+        <select name="category" id="categoryId">
+          <option value="Internet">Internet</option>
+          <option value="Gamer">Gamer</option>
+          <option value="Programming">Programming</option>
+          <option value="News">News</option>
+        </select> <br><br>
+        <button>Enviar</button>
+      </form>
+    </div>
+  </section>
+  <script src="assets/js/bundle.js"></script>
+</body>
+</html>
