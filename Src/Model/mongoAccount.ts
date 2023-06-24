@@ -23,7 +23,7 @@ class MongoAccount {
   }
 
   async findAccountByUser(username: string) {
-    this.accountModel
+    return this.accountModel
       .findOne({ user: username })
       .then((data) => {
         if (data) {

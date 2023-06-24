@@ -6,7 +6,6 @@ export class HomeController {
     const user = await mongoAccount.findAccountByUser(
       req.session.userLogged.username,
     );
-    console.log(user);
     res.render('home');
   }
 }

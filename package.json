@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.4",
     "@types/cookie-parser": "^1.4.3",
@@ -9,9 +9,9 @@
     "@types/express-session": "^1.17.7",
     "@types/jest": "^29.5.1",
     "@types/validator": "^13.7.17",
-    "babel-loader": "^9.1.2",
-    "jest": "^29.5.0",
-    "nodemon": "^2.0.22",
+    "babel-loader": "^7.1.5",
+    "jest": "^25.0.0",
+    "nodemon": "^1.14.9",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
@@ -21,7 +21,6 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
-    "bcrypt": "^5.1.0",
     "connect-mongo": "^5.0.0",
     "cookie-parser": "^1.4.6",
     "core-js": "^3.30.2",
@@ -39,12 +38,12 @@
     "prettier": "^2.8.8",
     "regenerator-runtime": "^0.13.11",
     "style-loader": "^3.3.3",
-    "ts-jest": "^29.1.0",
+    "ts-jest": "^27.0.3",
     "validator": "^13.9.0"
   },
   "scripts": {
     "test": "npx jest --watchAll --silent --noStackTrace",
     "build": "npx webpack -w",
-    "server": "npx nodemon ./Src/main.ts"
+    "server": "npx nodemon /Src/main.ts"
   }
 }

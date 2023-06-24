@@ -15,6 +15,6 @@ mongoose.connect(endpoint.MongoURI).then(() => {
 app.middleware();
 app.router(route.router);
 
-app.server.listen(3333, () => {
+app.server.listen(8000, () => {
   console.log('Servidor Ligado!');
 });

@@ -1,0 +1,6 @@
+{
+  "watch": ["Src"],
+  "ext": ".ts,.js",
+  "ignore": [],
+  "exec": "fuser -k 8000/tcp \n ts-node --files ./Src/main.ts"
+}
