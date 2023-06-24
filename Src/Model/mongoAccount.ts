@@ -7,18 +7,22 @@ class MongoAccount {
     email: String,
     password: String,
     user: String,
+    posts: Array,
   });
 
   private accountModel = mongoose.model('BlogLogin', this.accountSchema);
 
-  createAccount(body: UserMongoLogin): void {
+  async createAccount(body: UserMongoLogin): Promise<boolean> {
+    const user = await this.accountModel.findOne({ email: body.email });
+    if (user) return false;
     const userLogin = new this.accountModel({
       user: body.user,
       password: body.password,
       email: body.email,
+      posts: [],
     });
     userLogin.save();
-    return;
+    return true;
   }
 
   async loginAccount(body: UserLoginBody) {
@@ -32,6 +36,7 @@ class MongoAccount {
       const newUser = {
         user: user.user,
         email: user.email,
+        posts: user.posts,
       };
       return newUser;
     } else {

@@ -6,6 +6,12 @@ export class LoginController {
     res.render('login');
   }
 
+  logout(req: Request, res: Response) {
+    req.session.loginAuthentic = false;
+    req.session.userLogged.username = null;
+    return res.redirect('/login');
+  }
+
   async loginPost(req: Request, res: Response) {
     const user = await mongoAccount.loginAccount(req.body);
     if (user) {

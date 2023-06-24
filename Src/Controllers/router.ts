@@ -47,11 +47,12 @@ class Route {
     // Login
     this._router.get('/login', middle.registerRecuse, loginController.loginGet);
     this._router.post('/login', loginController.loginPost);
+    this._router.get('/logout', middle.loginMiddleware, loginController.logout);
 
     // Profile
     this._router.get(
       '/profile',
-      middle.registerRecuse,
+      middle.loginMiddleware,
       profileController.profileGet,
     );
   }

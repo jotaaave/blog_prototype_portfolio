@@ -7,7 +7,7 @@ export class RegisterController {
     res.render('register');
   }
 
-  registerPost(req: Request, res: Response) {
+  async registerPost(req: Request, res: Response) {
     const check = new CheckUp();
     const checked = check.clean(req.body);
     if (checked.length > 0) {
@@ -17,7 +17,11 @@ export class RegisterController {
       req.flash('password', req.body.password);
       return res.redirect('/register');
     }
-    mongoAccount.createAccount(req.body);
+    const accountCreated = await mongoAccount.createAccount(req.body);
+    if (!accountCreated) {
+      req.flash('errMsgArray', ['Já existe uma conta com este email!']);
+      return res.redirect('/register');
+    }
     req.session.loginAuthentic = true;
     req.session.userLogged = { username: req.body.user };
     res.redirect('/');

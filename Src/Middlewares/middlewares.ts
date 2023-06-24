@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 class Middlewares {
   loginMiddleware(req: Request, res: Response, next: NextFunction) {
+    console.log(req.ip);
     if (req.session.loginAuthentic) {
       return next();
     }

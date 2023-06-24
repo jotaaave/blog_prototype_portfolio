@@ -1,3 +1,9 @@
 <%- include('./Pages/top'); %>
 <h1>Perfil</h1>
+<% if (user) { %>
+  Usuario: <%= user %>
+  Email: <%= email %>
+<% } %>
+<br><br>
+<a href="/logout" style="color: red; text-decoration: none;">Sair da conta</a>
 <%- include('./Pages/footer'); %>
