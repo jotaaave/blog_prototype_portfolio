@@ -6,6 +6,10 @@ export class HomeController {
     const user = await mongoAccount.findAccountByUser(
       req.session.userLogged.username,
     );
-    res.render('home');
+    return user
+      ? res.render('home', {
+          user: user.user,
+        })
+      : res.render('home');
   }
 }

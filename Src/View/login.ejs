@@ -1,0 +1,15 @@
+<%- include('./Pages/top'); %>
+  <h1>Faça login!</h1>
+  <h3 style="color: red;">
+  <% if (locals.messages.errMsg){ %>
+    <%= locals.messages.errMsg %>
+  <% } %>
+  </h3>
+  <form action="/login" class="formLogin" method="post">
+    <label for="">E-mail</label> <br><br>
+    <input type="text" name="email" id="email"> <br><br>
+    <label for="">Senha</label> <br>
+    <input type="text" name="password" id="password"> <br> <br>
+    <button class="sendLogin">Logar</button>
+  </form>
+<%- include('./Pages/footer'); %>

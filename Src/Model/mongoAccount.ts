@@ -1,6 +1,6 @@
 import mongoose = require('mongoose');
 import { Schema } from 'mongoose';
-import { UserMongoLogin } from '../services/userProtocol';
+import { UserMongoLogin, UserLoginBody } from '../services/userProtocol';
 
 class MongoAccount {
   private accountSchema: Schema = new Schema({
@@ -18,25 +18,25 @@ class MongoAccount {
       email: body.email,
     });
     userLogin.save();
-    console.log('Cheguei aqui', userLogin);
     return;
   }
 
+  async loginAccount(body: UserLoginBody) {
+    const user = await this.accountModel.findOne({ email: body.email });
+    return user ? user : null;
+  }
+
   async findAccountByUser(username: string) {
-    return this.accountModel
-      .findOne({ user: username })
-      .then((data) => {
-        if (data) {
-          const objectUser = {
-            user: data.user,
-            email: data.email,
-          };
-          return objectUser;
-        } else {
-          return null;
-        }
-      })
-      .catch((e) => console.error(e));
+    const user = await this.accountModel.findOne({ user: username });
+    if (user) {
+      const newUser = {
+        user: user.user,
+        email: user.email,
+      };
+      return newUser;
+    } else {
+      return null;
+    }
   }
 }
 

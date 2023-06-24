@@ -4,4 +4,9 @@ interface UserMongoLogin {
   password: string;
 }
 
-export { UserMongoLogin };
+interface UserLoginBody {
+  email: string;
+  password: string;
+}
+
+export { UserMongoLogin, UserLoginBody };
