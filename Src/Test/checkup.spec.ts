@@ -1,4 +1,4 @@
-import { CheckUp } from '../classes/checkup';
+import { CheckUp } from '../Classes/checkup';
 
 const createSut = () => {
   const sut = new CheckUp();

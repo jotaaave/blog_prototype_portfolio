@@ -4,7 +4,7 @@ import { HomeController } from './homeController';
 import { RegisterController } from './registerController';
 import { LoginController } from './loginController';
 import { BlogProtocol } from '../services/blogProtocol';
-import { middle } from '../middlewares/middlewares';
+import { middle } from '../Middlewares/middlewares';
 
 class Route {
   private _router: Router = Router();

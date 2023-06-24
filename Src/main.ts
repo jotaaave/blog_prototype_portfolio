@@ -1,7 +1,7 @@
-import { Blog } from './classes/blog';
-import { GenerateId } from './classes/generateId';
-import { app } from './classes/app';
-import { Route } from './routes/router';
+import { Blog } from './Classes/blog';
+import { GenerateId } from './Classes/generateId';
+import { app } from './Classes/app';
+import { Route } from './Controllers/router';
 import mongoose from 'mongoose';
 import endpoint from '../endpoints.config';
 

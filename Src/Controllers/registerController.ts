@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { mongoAccount } from '../Model/mongoAccount';
-import { CheckUp } from '../classes/checkup';
+import { CheckUp } from '../Classes/checkup';
 
 export class RegisterController {
   register(req: Request, res: Response) {
