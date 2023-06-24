@@ -17,9 +17,3 @@ class Middlewares {
 }
 
 export const middle = new Middlewares();
-
-/*
-Usuario faz loguin 1 vez, LOGIN: TRUE
-Usuario perde o LOGIN: TRUE, porem a conta existe no banco de dados
-Usuario faz login nessa conta novamente (Caso exista) e volta o LOGIN: TRUE
-*/
