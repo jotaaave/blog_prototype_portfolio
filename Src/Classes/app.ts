@@ -1,6 +1,6 @@
 import { Express } from 'express';
 import { Router } from 'express';
-import { SessionCreate } from '../classes/session';
+import { SessionCreate } from '../Classes/session';
 import flash = require('express-flash');
 import express = require('express');
 
