@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { mongoAccount } from '../Model/mongoAccount';
+import passhash = require('password-hash');
 
 export class LoginController {
   loginGet(req: Request, res: Response) {
@@ -15,7 +16,7 @@ export class LoginController {
   async loginPost(req: Request, res: Response) {
     const user = await mongoAccount.loginAccount(req.body);
     if (user) {
-      if (user.password === req.body.password) {
+      if (passhash.verify(req.body.password, user.password)) {
         req.session.loginAuthentic = true;
         req.session.userLogged = { username: user.user };
         return res.redirect('/');
